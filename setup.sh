@@ -324,7 +324,7 @@ if (isset($_SESSION['user']) && !isset($_SESSION['user_id'])) {
     if ($conn_init) {
         mysqli_select_db($conn_init, DB_NAME);
         $user_esc = mysqli_real_escape_string($conn_init, $_SESSION['user']);
-        $res_init = mysqli_query($conn_init, "SELECT user_id FROM tbl_users WHERE username = '$user_esc'");
+        $res_init = @mysqli_query($conn_init, "SELECT user_id FROM tbl_users WHERE username = '$user_esc'");
         if ($res_init && $row_init = mysqli_fetch_assoc($res_init)) {
             $_SESSION['user_id'] = $row_init['user_id'];
         }
