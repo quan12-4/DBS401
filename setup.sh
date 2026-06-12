@@ -272,6 +272,7 @@ mkdir -p "${SITE_DIR}/config"
 cat > "${SITE_DIR}/config/constants.php" <<'CONFIGEOF'
 <?php
 session_start();
+mysqli_report(MYSQLI_REPORT_OFF);
 
 define('LOCALHOST', 'localhost');
 define('DB_NAME', 'DB_NAME_PLACEHOLDER');
