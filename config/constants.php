@@ -1,5 +1,6 @@
 <?php
 session_start();
+mysqli_report(MYSQLI_REPORT_OFF);
 
 define('LOCALHOST', 'localhost');
 define('DB_USERNAME', 'taskmgr_user');
